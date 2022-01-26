@@ -1,4 +1,4 @@
-.row {
+.hours {
   outline: 1px solid red;
 }
 
@@ -74,17 +74,3 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
-.scheduler {
-  display: grid;
-  grid-template-areas:
-  "hours information";
-  grid-template-columns: 120px;
-}
-
-.hours {
-  display: block;
-}
-
-.information {
-  display: block;
-}
