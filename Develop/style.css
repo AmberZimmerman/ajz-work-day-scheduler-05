@@ -2,6 +2,14 @@
   outline: 1px solid red;
 }
 
+.task {
+  outline: 1px solid rgb(146, 146, 216);
+}
+
+.save {
+  outline: 1px solid rgb(24, 163, 121);
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -74,3 +82,5 @@ textarea {
   transition: all 0.3s ease-in-out;
 }
 
+
+  
