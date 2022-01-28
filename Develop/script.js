@@ -17,19 +17,86 @@
 let today = moment();
 $("#currentDay").text(today.format("MMM Do, YYYY"));
 
-$("#weekly-schedule").dayScheduleSelector({
-    days: [0, 1, 2, 3, 4, 5, 6],
-    startTime:'08:00',
-    endTime:'20:00',
-    interval: 30,
-    stringDays  : ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
-    template    :'<div class="day-schedule-selector">' + 
-    '<table class="schedule-table">' + 
-    '<head class="schedule-header"></head>' + '<body class="schedule-rows"></body>' + 
-    '</table>' + '<div>'
- });
+const hourBlocks = [
+    {   hour: 9,
+        task: "",
+        save: false
+    },
+    {   hour: 10,
+        task: "Eat cheese",
+        save: true
+    },
+    {   hour: 11,
+        task: "Clean cowgirl boots",
+        save: true
+    },
+    {   hour: 12,
+        task: "Tip my hat",
+        save: true
+    },
+    {   hour: 13,
+        task: "Get a new saddle",
+        save: true
+    },
+    {   hour: 14,
+        task: "Put on fringe vest",
+        save: true
+    },
+    {   hour: 15,
+        task: "",
+        save: true
+    },
+    {   hour: 16,
+        task: "Sing a sad song",
+        save: true
+    },
+    {   hour: 17,
+        task: "Dance",
+        save: true
+    }
+
+]
+
+console.log('start loop')
+// 1. Define starting number - DONE
+// 2. Do a check first
+// 3. If it passes check, run code block {}
+// 4. Code Finishes
+// 5. Then do number increate
+// 6. Do check on index
+// 7. Run code
+// 8. Code finishes
+// 9. index++
+// 10. Does Check
+// 11. Doesn't pass check
+// 12. Exit for loop
+
+const block1 =hourBlocks[0];
+
+const el = document.getElementById('hour-blocks');
+
+for (let index = 0; index < hourBlocks.length; index++) {
+    const block = hourBlocks[index];
+    const hour = block.hour;
+    const hourEl = document.createElement('div');
+    hourEl.innerText = block.hour;
+    hourEl.classList.add('hours');
+    hourEl.classList.add('col-1');
     
- $("#weekly-schedule").data('artsy.dayScheduleSelector').deserialize({
-      '0': [['09:30','11:00'], ['13:00','16:30']]
-    });
+    const task = block.task;
+    const taskEl = document.createElement('div');
+    taskEl.innerText = block.task;
+    taskEl.classList.add('task');
+    taskEl.classList.add('col-10');
+
+    const floppyDisk = document.createElement('button');
+    floppyDisk.classList.add('col-1');
     
+    const rowEl = document.createElement('div');
+    rowEl.classList.add('row');
+    el.appendChild(rowEl);
+    rowEl.appendChild(hourEl);
+    rowEl.appendChild(taskEl);
+    rowEl.appendChild(floppyDisk);
+}
+
