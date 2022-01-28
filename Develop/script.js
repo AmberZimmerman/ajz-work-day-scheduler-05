@@ -18,39 +18,48 @@ let today = moment();
 $("#currentDay").text(today.format("MMM Do, YYYY"));
 
 const hourBlocks = [
-    {   hour: 9,
+    {   id: 1,
+        hour: 9,
         task: "",
         save: false
     },
-    {   hour: 10,
+    {   id: 2,
+        hour: 10,
         task: "Eat cheese",
         save: true
     },
-    {   hour: 11,
+    {   id: 3,
+        hour: 11,
         task: "Clean cowgirl boots",
         save: true
     },
-    {   hour: 12,
+    {   id: 4,
+        hour: 12,
         task: "Tip my hat",
         save: true
     },
-    {   hour: 13,
+    {   id: 5,
+        hour: 13,
         task: "Get a new saddle",
         save: true
     },
-    {   hour: 14,
+    {   id: 6,
+        hour: 14,
         task: "Put on fringe vest",
         save: true
     },
-    {   hour: 15,
+    {   id: 7,
+        hour: 15,
         task: "",
         save: true
     },
-    {   hour: 16,
+    {   id: 8,
+        hour: 16,
         task: "Sing a sad song",
         save: true
     },
-    {   hour: 17,
+    {   id: 9,
+        hour: 17,
         task: "Dance",
         save: true
     }
@@ -71,7 +80,7 @@ console.log('start loop')
 // 11. Doesn't pass check
 // 12. Exit for loop
 
-const block1 =hourBlocks[0];
+
 
 const el = document.getElementById('hour-blocks');
 
@@ -84,13 +93,17 @@ for (let index = 0; index < hourBlocks.length; index++) {
     hourEl.classList.add('col-1');
     
     const task = block.task;
-    const taskEl = document.createElement('div');
+    const taskEl = document.createElement('input');
     taskEl.innerText = block.task;
     taskEl.classList.add('task');
     taskEl.classList.add('col-10');
 
     const floppyDisk = document.createElement('button');
     floppyDisk.classList.add('col-1');
+    floppyDisk.setAttribute('value', block.id);
+    floppyDisk.innerText = block.id;
+    console.log(floppyDisk);
+    
     
     const rowEl = document.createElement('div');
     rowEl.classList.add('row');
@@ -99,4 +112,5 @@ for (let index = 0; index < hourBlocks.length; index++) {
     rowEl.appendChild(taskEl);
     rowEl.appendChild(floppyDisk);
 }
+
 
