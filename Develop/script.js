@@ -101,9 +101,27 @@ for (let index = 0; index < hourBlocks.length; index++) {
     const floppyDisk = document.createElement('button');
     floppyDisk.classList.add('col-1');
     floppyDisk.setAttribute('value', block.id);
-    floppyDisk.innerText = block.id;
-    console.log(floppyDisk);
-    
+    taskEl.setAttribute('data-input-id', block.id);
+    floppyDisk.addEventListener("click", function () {
+        // User clicks on Button
+        // Then take the value from said button
+        const floppyDiskValue = floppyDisk.value;
+        // Loop through blocks array to find specific data
+        for (let index = 0; index < hourBlocks.length; index++) {
+            const currentBlock = hourBlocks[index];
+            const currentBlockId = currentBlock.id;
+            // If it finds matching ids from array and button, it does stuff!
+            if (floppyDiskValue == currentBlockId) {
+                console.log(currentBlock);
+                console.log('Floppy Value: ', floppyDiskValue);
+                // Create string parameter to select input
+                const value = taskEl.value;
+                currentBlock.task = value;
+                console.log(value);
+            }
+        }
+        
+    });
     
     const rowEl = document.createElement('div');
     rowEl.classList.add('row');
