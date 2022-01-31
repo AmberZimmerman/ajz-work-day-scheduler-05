@@ -1,19 +1,3 @@
-
-
-// WHEN I scroll down
-// THEN I am presented with timeblocks for standard business hours
-// WHEN I view the timeblocks for that day
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-// WHEN I click into a timeblock
-// THEN I can enter an event
-// WHEN I click the save button for that timeblock
-// THEN the text for that event is saved in local storage
-// WHEN I refresh the page
-// THEN the saved events persist
-
-// WHEN I open the planner
-// THEN the current day is displayed at the top of the calendar
-
 // This presents the current time and day
 let today = moment();
 $("#currentDay").text(today.format("MMM Do, YYYY"));
@@ -88,7 +72,7 @@ function initiateApp() {
         const hour = block.hour;
         const hourEl = document.createElement('div');
         hourEl.innerText = hour;
-        hourEl.classList.add('hours');
+        hourEl.classList.add('time-block');
         hourEl.classList.add('col-1');
         
         const task = block.task;
@@ -98,8 +82,13 @@ function initiateApp() {
         taskEl.classList.add('col-10');
     
         const floppyDisk = document.createElement('button');
-        floppyDisk.setAttribute('value', `<i class="far fa-save"></i>`);
+        const floppyDiskIcon = document.createElement('i');
+        floppyDiskIcon.classList.add('far');
+        floppyDiskIcon.classList.add('fa-save');
+        floppyDiskIcon.classList.add('icon-large');
+        floppyDisk.appendChild(floppyDiskIcon);
         floppyDisk.classList.add('col-1');
+        floppyDisk.classList.add('saveBtn');
         floppyDisk.setAttribute('value', block.id);
         taskEl.setAttribute('data-input-id', block.id);
         floppyDisk.addEventListener("click", function () {

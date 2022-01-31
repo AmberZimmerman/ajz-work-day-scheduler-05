@@ -24,10 +24,6 @@
   display: block;
 }
 
-.save {
-  outline: 1px solid rgb(24, 163, 121);
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -93,10 +89,11 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  font-size: 20px;
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
+  font-size: 40px;
   transition: all 0.3s ease-in-out;
 }
 
