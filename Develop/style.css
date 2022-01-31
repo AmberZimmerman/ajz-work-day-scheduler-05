@@ -1,9 +1,27 @@
+* {
+  border: none;
+}
+
 .hours {
   outline: 1px solid red;
 }
 
-.task {
-  outline: 1px solid rgb(146, 146, 216);
+.task-past {
+  background-color: grey;
+}
+
+.task-present {
+  background-color: red;
+}
+
+.task-future {
+  background-color: green;
+}
+
+.dolly {
+  background-position: center top;
+  background-size: cover;
+  display: block;
 }
 
 .save {
