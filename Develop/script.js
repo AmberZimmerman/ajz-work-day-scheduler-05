@@ -7,46 +7,55 @@ $("#currentDay").text(today.format("MMM Do, YYYY"));
 let initialHourData = [
     {   id: 1,
         hour: 9,
+        time: "9AM",
         task: "",
         dolly: "01"
     },
     {   id: 2,
         hour: 10,
+        time: "10AM",
         task: "",
         dolly: "02"
     },
     {   id: 3,
         hour: 11,
+        time: "11AM",
         task: "",
         dolly: "03"
     },
     {   id: 4,
         hour: 12,
+        time: "12AM",
         task: "",
         dolly: "04"
     },
     {   id: 5,
         hour: 13,
+        time: "1PM",
         task: "",
         dolly: "05"
     },
     {   id: 6,
         hour: 14,
+        time: "2PM",
         task: "",
         dolly: "06"
     },
     {   id: 7,
         hour: 15,
+        time: "3PM",
         task: "",
         dolly: "07"
     },
     {   id: 8,
         hour: 16,
+        time: "4PM",
         task: "",
         dolly: "08"
     },
     {   id: 9,
         hour: 17,
+        time: "5PM",
         task: "",
         dolly: "09"
     }
@@ -71,8 +80,8 @@ function initiateApp() {
         const block = hourBlocks[index];
         const hour = block.hour;
         const hourEl = document.createElement('div');
-        hourEl.innerText = hour;
-        hourEl.classList.add('time-block');
+        hourEl.innerText = block.time;
+        hourEl.classList.add('hour');
         hourEl.classList.add('col-1');
         
         const task = block.task;
@@ -80,7 +89,6 @@ function initiateApp() {
         taskEl.value = task;
         taskEl.classList.add('task');
         taskEl.classList.add('col-10');
-    
         const floppyDisk = document.createElement('button');
         const floppyDiskIcon = document.createElement('i');
         floppyDiskIcon.classList.add('far');
