@@ -135,9 +135,9 @@ function initiateApp() {
         console.log(typeof realTimeNumber);
 
         // Create a statement to change colors, grey for past, red for current, green for future
-        if (hour === 11) {
+        if (hour === realTimeNumber) {
             taskEl.classList.add('task-present');
-        } else if (hour < 11) {
+        } else if (hour < realTimeNumber) {
             // instead of the color grey, make all slots fill in a picture of Dolly Parton
             taskEl.classList.add('dolly');
             const grabDolly = block.dolly;
@@ -145,7 +145,7 @@ function initiateApp() {
             taskEl.style.backgroundImage = `url(${dollyPicture})`;
             console.log(dollyPicture);
             // taskEl.classList.add('task-past');
-        } else if (hour > 11) {
+        } else if (hour > realTimeNumber) {
             taskEl.classList.add('task-future');
         }
     }
