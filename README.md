@@ -2,4 +2,4 @@
 
 View this page at https://amberzimmerman.github.io/ajz-work-day-scheduler-05/
 
-![screen shot desktopview of hero section on Amber Zimmermans portfolio page](/assets/images/schedule-screenshot.png)
+![screen shot desktop view of Day Planner when all the hours are in the past and it reveals a photo of Dolly Parton](/assets/images/schedule-screenshot.png)
