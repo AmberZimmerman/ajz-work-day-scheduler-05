@@ -1,4 +1,4 @@
-# ajz-work-day-scheduler-05
+# Dolly Work Day Planner
 
 View this page at https://amberzimmerman.github.io/dolly-workday-planner/
 
